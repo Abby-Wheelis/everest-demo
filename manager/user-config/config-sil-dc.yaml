@@ -3,7 +3,7 @@ active_modules:
     module: JsDCSupplySimulator
     config_implementation:
       main:
-        max_power: 240000
+        max_power: 250000
         max_current: 400
   car_simulator:
     module: JsCarSimulator

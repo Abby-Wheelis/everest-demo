@@ -24,9 +24,9 @@ jobs:
           - host_namespace: ghcr.io/abby-wheelis/everest-demo
             image_name: mqtt-server
             context: ./mosquitto
-          - host_namespace: ghcr.io/abby-wheelis/everest-demo
-            image_name: nodered
-            context: ./nodered
+          # - host_namespace: ghcr.io/abby-wheelis/everest-demo
+          #   image_name: nodered
+          #   context: ./nodered
           - host_namespace: ghcr.io/abby-wheelis/everest-demo
             image_name: manager
             context: ./manager

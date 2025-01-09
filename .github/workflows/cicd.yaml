@@ -124,7 +124,8 @@ jobs:
         shell: bash
         run: |
           echo "TAG=${{ steps.docker-image-version-check.outputs.TAG }}"
-          docker save --output /tmp/manager_${{ steps.docker-image-version-check.outputs.TAG }}.tar ghcr.io/abby-wheelis/everest-demo/manager:${{ steps.docker-image-version-check.outputs.TAG }}
+          stat /tmp/manager_${{ steps.docker-image-version-check.outputs.TAG }}.tar
+          # docker save --output /tmp/manager_${{ steps.docker-image-version-check.outputs.TAG }}.tar ghcr.io/abby-wheelis/everest-demo/manager:${{ steps.docker-image-version-check.outputs.TAG }}
       
 
       - name: Upload mqtt-server image as Artifact

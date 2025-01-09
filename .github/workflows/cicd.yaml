@@ -158,7 +158,7 @@ jobs:
         with:
           context: ${{ matrix.context }}
           push: true
-          tags: myimage:latest
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha,scope=${{ matrix.image_name }}
           cache-to: type=gha,mode=max,scope=${{ matrix.image_name }}
@@ -166,4 +166,4 @@ jobs:
       - name: Inspect
         if: ${{ matrix.image_name == 'manager' }}
         run: |
-          docker image inspect myimage:latest
+          docker image inspect ${{ steps.meta.outputs.tags }} 

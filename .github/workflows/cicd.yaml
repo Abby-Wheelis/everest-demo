@@ -125,6 +125,14 @@ jobs:
           name: mqtt_server_image_${{ steps.docker-image-version-check.outputs.TAG }}
           path: /tmp/mqtt-server_${{ steps.docker-image-version-check.outputs.TAG }}.tar
           overwrite: true
+      
+      - name: Upload manager image as Artifact
+        if: ${{ matrix.image_name == 'manager' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: manager_${{ steps.docker-image-version-check.outputs.TAG }}
+          path: /tmp/manager_${{ steps.docker-image-version-check.outputs.TAG }}.tar
+          overwrite: true
 
       - name: Download mqtt-server image as Artifact
         if: ${{ matrix.image_name == 'manager' }}
@@ -168,7 +176,8 @@ jobs:
         run: |
           docker image inspect ${{ steps.meta.outputs.tags }} 
 
-      - name: Inspect
-        if: ${{ matrix.image_name == 'mqtt-server' }}
-        run: |
-          docker image inspect ${{ steps.meta.outputs.tags }} 
+      #this mostly worked, so what is different about the manager?
+      # - name: Inspect
+      #   if: ${{ matrix.image_name == 'mqtt-server' }}
+      #   run: |
+      #     docker image inspect ${{ steps.meta.outputs.tags }} 

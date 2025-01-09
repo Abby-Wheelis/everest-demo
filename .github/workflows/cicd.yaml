@@ -167,3 +167,8 @@ jobs:
         if: ${{ matrix.image_name == 'manager' }}
         run: |
           docker image inspect ${{ steps.meta.outputs.tags }} 
+
+      - name: Inspect
+        if: ${{ matrix.image_name == 'mqtt-server' }}
+        run: |
+          docker image inspect ${{ steps.meta.outputs.tags }} 

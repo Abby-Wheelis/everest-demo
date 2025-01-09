@@ -124,6 +124,7 @@ jobs:
         shell: bash
         run: |
           echo "TAG=${{ steps.docker-image-version-check.outputs.TAG }}"
+          ls /tmp
           stat /tmp/manager_${{ steps.docker-image-version-check.outputs.TAG }}.tar
           # docker save --output /tmp/manager_${{ steps.docker-image-version-check.outputs.TAG }}.tar ghcr.io/abby-wheelis/everest-demo/manager:${{ steps.docker-image-version-check.outputs.TAG }}
       

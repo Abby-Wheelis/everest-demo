@@ -117,17 +117,6 @@ jobs:
         run: |
           echo "TAG=${{ steps.docker-image-version-check.outputs.TAG }}"
           docker save --output /tmp/mqtt-server_${{ steps.docker-image-version-check.outputs.TAG }}.tar ghcr.io/abby-wheelis/everest-demo/mqtt-server:${{ steps.docker-image-version-check.outputs.TAG }}
-      
-      - name: Save Manager Docker image
-        if: ${{ matrix.image_name == 'manager' }}
-        id: save-manager-image
-        shell: bash
-        run: |
-          echo "TAG=${{ steps.docker-image-version-check.outputs.TAG }}"
-          ls /tmp
-          stat /tmp/manager_${{ steps.docker-image-version-check.outputs.TAG }}.tar
-          # docker save --output /tmp/manager_${{ steps.docker-image-version-check.outputs.TAG }}.tar ghcr.io/abby-wheelis/everest-demo/manager:${{ steps.docker-image-version-check.outputs.TAG }}
-      
 
       - name: Upload mqtt-server image as Artifact
         if: ${{ matrix.image_name == 'mqtt-server' }}
@@ -135,14 +124,6 @@ jobs:
         with:
           name: mqtt_server_image_${{ steps.docker-image-version-check.outputs.TAG }}
           path: /tmp/mqtt-server_${{ steps.docker-image-version-check.outputs.TAG }}.tar
-          overwrite: true
-
-      - name: Upload mangar image as Artifact
-        if: ${{ matrix.image_name == 'mangaer' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: manager_image_${{ steps.docker-image-version-check.outputs.TAG }}
-          path: /tmp/manager_${{ steps.docker-image-version-check.outputs.TAG }}.tar
           overwrite: true
 
       - name: Download mqtt-server image as Artifact

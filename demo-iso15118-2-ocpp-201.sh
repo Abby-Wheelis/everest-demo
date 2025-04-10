@@ -103,7 +103,8 @@ fi
     source ../${DEMO_CSMS}/copy-certs.sh
   fi
 
-  source ../${DEMO_CSMS}/apply-runtime-patches.sh
+  echo "about to apply maeve runtime patches $(pwd)"
+  source $../{DEMO_CSMS}/apply-runtime-patches.sh
 
   if ! docker compose --project-name "${DEMO_CSMS}"-csms up -d --wait; then
       echo "Failed to start ${DEMO_CSMS}"

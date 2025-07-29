@@ -37,7 +37,7 @@ jobs:
             context: ./maeve-csms/gateway
             host_namespace: ghcr.io/everest/everest-demo
           - csms: citrineos
-            csms_repo: https://github.com/citrineos/citrineos-core.git
+            csms_repo: citrineos/citrineos-core
             csms_branch: v1.7.1
             image_name: citrineos-server
 

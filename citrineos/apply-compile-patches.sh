@@ -4,4 +4,9 @@
 # before we build.
 # And there is no harm in turning off OCSP completely
 
-echo "No compile-time patches for Citrine at this time!"
+# echo "No compile-time patches for Citrine at this time!"
+git clone https://github.com/citrineos/citrineos-core.git to-copy-templates
+cp -r to-copy-templates/Server/data . #copy in the server data
+cp -r to-copy-templates/Server/hasura-metadata . #copy in the hasura metadata
+rm -rf to-copy-templates
+

@@ -24,18 +24,18 @@ jobs:
     strategy:
       matrix:
         include:
-          - csms: maeve
-            csms_repo: US-JOET/maeve-csms
-            csms_branch: set_charging_profile
-            image_name: manager
-            context: ./maeve-csms/manager
-            host_namespace: ghcr.io/everest/everest-demo
-          - csms: maeve
-            csms_repo: US-JOET/maeve-csms
-            csms_branch: set_charging_profile
-            image_name: gateway
-            context: ./maeve-csms/gateway
-            host_namespace: ghcr.io/everest/everest-demo
+          # - csms: maeve
+          #   csms_repo: US-JOET/maeve-csms
+          #   csms_branch: set_charging_profile
+          #   image_name: manager
+          #   context: ./maeve-csms/manager
+          #   host_namespace: ghcr.io/everest/everest-demo
+          # - csms: maeve
+          #   csms_repo: US-JOET/maeve-csms
+          #   csms_branch: set_charging_profile
+          #   image_name: gateway
+          #   context: ./maeve-csms/gateway
+          #   host_namespace: ghcr.io/everest/everest-demo
           - csms: citrineos
             csms_repo: citrineos/citrineos-core
             csms_branch: v1.7.1

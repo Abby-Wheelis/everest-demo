@@ -8,4 +8,6 @@ echo "Copying data into the container!"
 cp -r Server/data . #where does it need to end up?
 cp -r Server/hasura-metadata . #where does it need to end up?
 
-cp ./Dockerfile Server/Dockerfile
+ls
+pwd
+cp Dockerfile Server/Dockerfile

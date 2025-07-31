@@ -10,3 +10,5 @@
 # cp -r to-copy-templates/Server/hasura-metadata . #copy in the hasura metadata
 # rm -rf to-copy-templates
 
+ls
+

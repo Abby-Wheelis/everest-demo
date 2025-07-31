@@ -42,6 +42,7 @@ jobs:
             image_name: citrineos-server
             host_namespace: ghcr.io/everest/everest-demo #this worked, now there's no dockerfile though
             context: ./citrineos-csms/Server
+            dockerfile: ./citrineos-csms/Server/deploy.Dockerfile
 
     steps:
       - name: Checkout this repo

@@ -10,4 +10,4 @@ cp -r Server/hasura-metadata . #where does it need to end up?
 
 ls
 pwd
-cp Dockerfile Server/Dockerfile
+cp ../citrineos/Dockerfile Server/Dockerfile

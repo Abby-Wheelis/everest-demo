@@ -155,7 +155,7 @@ jobs:
 # 
 
       - name: List files in context
-        run: ls -R everest-demo/citrineos-csms/Server
+        run: ls -R ./citrineos-csms/Server
 
       - name: Build and export to Docker
         uses: docker/build-push-action@v6

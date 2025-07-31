@@ -40,7 +40,8 @@ jobs:
             csms_repo: citrineos/citrineos-core
             csms_branch: v1.7.1
             image_name: citrineos-server
-            host_namespace: ghcr.io/everest/everest-demo
+            host_namespace: ghcr.io/everest/everest-demo #this worked, now there's no dockerfile though
+            context: ./citrineos-csms/Server
 
     steps:
       - name: Checkout this repo

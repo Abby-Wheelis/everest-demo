@@ -8,7 +8,7 @@ echo "Copying data into the container!"
 cp -r Server/data . #where does it need to end up?
 cp -r Server/hasura-metadata . #where does it need to end up?
 
-ls ../
+ls ../everest-demo
 ls ../citrineos
 pwd
 cp ../citrineos/Dockerfile Server/Dockerfile

@@ -41,8 +41,8 @@ jobs:
             csms_branch: v1.7.1
             image_name: citrineos-server
             host_namespace: ghcr.io/everest/everest-demo #this worked, now there's no dockerfile though
-            context: ./citrineos-csms/Server
-            dockerfile: deploy.Dockerfile
+            context: ./citrineos-csms/Swarm
+            dockerfile: ./citrineos-csms/Serverdeploy.Dockerfile
 
     steps:
       - name: Checkout this repo
@@ -154,22 +154,22 @@ jobs:
 #             docker push ghcr.io/everest/everest-demo/${{ matrix.csms }}-csms-manager:"${TAG}"
 # 
 
-      - name: List files in context
-        run: ls -R ${{ matrix.context }}
+      # - name: List files in context
+      #   run: ls -R ${{ matrix.context }}
 
-      #add a step to see if dockerfile exists in contect
-      - name: Check if Dockerfile exists
-        run: |
-          if [ ! -f ${{ matrix.context }}/${{ matrix.dockerfile }} ]; then
-            echo "Error: Dockerfile not found at ${{ matrix.context }}/${{ matrix.dockerfile }}"
-            exit 1
-          fi
+      # #add a step to see if dockerfile exists in contect
+      # - name: Check if Dockerfile exists
+      #   run: |
+      #     if [ ! -f ${{ matrix.context }}/${{ matrix.dockerfile }} ]; then
+      #       echo "Error: Dockerfile not found at ${{ matrix.context }}/${{ matrix.dockerfile }}"
+      #       exit 1
+      #     fi
 
       - name: Build and export to Docker
         uses: docker/build-push-action@v6
         with:
           context: ${{ matrix.context }}
-          file: ${{ matrix.context }}/${{ matrix.dockerfile }}
+          file: ${{ matrix.dockerfile }}
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}

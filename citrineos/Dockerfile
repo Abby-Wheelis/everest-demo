@@ -4,7 +4,8 @@ FROM --platform=${BUILDPLATFORM:-linux/amd64} node:22 AS build
 WORKDIR /usr/local/apps/citrineos
 
 COPY . .
-RUN npm run install && npm run build
+RUN pwd
+RUN npm run install-all && npm run build
 
 # The final stage, which copies built files and prepares the run environment
 # Using a slim image to reduce the final image size

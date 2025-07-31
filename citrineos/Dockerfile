@@ -5,6 +5,7 @@ WORKDIR /usr/local/apps/citrineos
 
 COPY . .
 RUN pwd
+RUN ls
 RUN npm run install-all && npm run build
 
 # The final stage, which copies built files and prepares the run environment

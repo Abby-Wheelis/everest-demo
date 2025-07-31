@@ -41,7 +41,7 @@ jobs:
             csms_branch: v1.7.1
             image_name: citrineos-server
             host_namespace: ghcr.io/everest/everest-demo #this worked, now there's no dockerfile though
-            context: everest-demo/citrineos-csms/Server
+            context: ./citrineos-csms/Server
             dockerfile: deploy.Dockerfile
 
     steps:

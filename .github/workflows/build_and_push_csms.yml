@@ -41,7 +41,7 @@ jobs:
             csms_branch: v1.7.1
             image_name: citrineos-server
             host_namespace: ghcr.io/everest/everest-demo #this worked, now there's no dockerfile though
-            context: ./citrineos-csms/Server
+            context: everest-demo/citrineos-csms/Server
             dockerfile: deploy.Dockerfile
 
     steps:
@@ -153,6 +153,9 @@ jobs:
 #             docker push ghcr.io/everest/everest-demo/${{ matrix.csms }}-csms-gateway:"${TAG}"
 #             docker push ghcr.io/everest/everest-demo/${{ matrix.csms }}-csms-manager:"${TAG}"
 # 
+
+      - name: List files in context
+        run: ls -R everest-demo/citrineos-csms/Server
 
       - name: Build and export to Docker
         uses: docker/build-push-action@v6

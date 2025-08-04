@@ -37,8 +37,8 @@ jobs:
           #   context: ./maeve-csms/gateway
           #   host_namespace: ghcr.io/everest/everest-demo
           - csms: citrineos
-            csms_repo: citrineos/citrineos-core
-            csms_branch: v1.7.1
+            csms_repo: Abby-Wheelis/citrineos-core
+            csms_branch: main
             image_name: citrineos-server
             host_namespace: ghcr.io/everest/everest-demo #this worked, now there's no dockerfile though
             context: ./citrineos-csms/

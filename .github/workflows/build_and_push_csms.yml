@@ -156,6 +156,19 @@ jobs:
 
       - name: List files in context
         run: ls -R ${{ matrix.context }}
+      #add a step to check if Server/data exists in context
+      - name: Check if Server/data exists
+        run: |
+          if [ ! -d ${{ matrix.context }}/Server/data ]; then
+            echo "Error: Server/data directory not found at ${{ matrix.context }}/Server/data"
+            exit 1
+          fi
+      - name: Check if Server/hasura-metadata exists
+        run: |
+          if [ ! -d ${{ matrix.context }}/Server/hasura-metadata ]; then
+            echo "Error: Server/data directory not found at ${{ matrix.context }}/Server/hasura-metadata"
+            exit 1
+          fi
 
       # #add a step to see if dockerfile exists in contect
       # - name: Check if Dockerfile exists

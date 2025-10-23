@@ -40,7 +40,7 @@ jobs:
             csms_repo: Abby-Wheelis/citrineos-core
             csms_branch: main
             image_name: citrineos-server
-            host_namespace: ghcr.io/everest/everest-demo
+            host_namespace: ghcr.io/Abby-Wheelis/everest-demo
             context: ./citrineos-csms/
             dockerfile: ./citrineos-csms/Server/deploy.Dockerfile
 

@@ -1,5 +1,5 @@
---- /ext/source/build/dist/libexec/everest/3rd_party/josev/iso15118/evcc/comm_session_handler.py
-+++ /ext/dist/libexec/everest/3rd_party/josev/iso15118/evcc/comm_session_handler.py
+--- a/iso15118/evcc/comm_session_handler.py
++++ b/iso15118/evcc/comm_session_handler.py
 @@ -114,6 +114,21 @@
          # Once the timer is up, the EV will terminate the communication session.
          # A value >= 0 means the timer is running, a value < 0 means it stopped.

@@ -122,6 +122,7 @@ services:
         # meaning 01_Data/dist/layers/sequelize/util.js was executed and logged
         # CitrineOS Logger:DefaultSequelizeInstance Database altered,
         # which means the database is ready to be used by hasura
+        #randmo comment for update
         condition: service_healthy
     environment:
       ## postgres database to store Hasura metadata

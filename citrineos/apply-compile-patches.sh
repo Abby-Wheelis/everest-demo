@@ -11,4 +11,6 @@ echo "Copying data into the container!"
 git clone https://github.com/citrineos/citrineos-core.git to-copy-templates
 cp -r to-copy-templates/Server/data .
 cp -r to-copy-templates/Server/hasura-metadata .
+pwd
+ls -la . 
 # rm -rf to-copy-templates

@@ -1,6 +1,6 @@
 FROM ghcr.io/catarial/everest-ci/build-kit-base:v1.5.2
 
-ARG EVEREST_VERSION=2025.10.0
+ARG EVEREST_VERSION=2025.12.0
 ENV EVEREST_VERSION=${EVEREST_VERSION}
 
 RUN echo "Copying compile-time patches before starting compile"
@@ -27,10 +27,10 @@ RUN /entrypoint.sh run-script compile \
 # build (e.g. between the cmake and the ninja, we could apply
 # it there. But this is what we have to work with :(
 
-RUN echo "Applying library patches"
-RUN bash /tmp/demo-patch-scripts/apply-library-patches.sh
-RUN /entrypoint.sh run-script compile \
-   && /entrypoint.sh run-script install
+# RUN echo "Applying library patches"
+# RUN bash /tmp/demo-patch-scripts/apply-library-patches.sh
+# RUN /entrypoint.sh run-script compile \
+#    && /entrypoint.sh run-script install
 
 # cleanup
 RUN apt-get -y remove --purge build-essential

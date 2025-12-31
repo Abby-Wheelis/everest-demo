@@ -10,10 +10,10 @@ cd / && patch -p0 -N -i /tmp/demo-patches/iso15118_prevent_m1_crash.patch
 echo "Applying hw_cap_down_to_16A.patch"
 cd / && patch -N -p0 -i /tmp/demo-patches/hw_cap_down_to_16A.patch
 
-echo "Applyting PyEvJosev departure time patch"
-cd / && patch -N -p0 -i /tmp/demo-patches/pyjosev-dt-pr.patch
+# echo "Applyting PyEvJosev departure time patch"
+# cd / && patch -N -p0 -i /tmp/demo-patches/pyjosev-dt-pr.patch
 
-cp /tmp/demo-patches/power_curve.py \
-/ext/dist/libexec/everest/3rd_party/josev/iso15118/evcc/states/
+# cp /tmp/demo-patches/power_curve.py \
+# /ext/dist/libexec/everest/3rd_party/josev/iso15118/evcc/states/
 
 cp /tmp/demo-patches/enable_evcc_logging.cfg /ext/dist/etc/everest/default_logging.cfg
